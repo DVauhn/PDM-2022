@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(1440, 757);
-  strokeWeight(1);
+  strokeWeight(5);
   background(250);
   brushColor = color(0);
 }
@@ -9,7 +9,14 @@ function draw() {
   drawVColorPane();
   
   
-  if (mouseIsPressed) {
+  
+    if (mouseIsPressed){
+    stroke(brushColor);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+    }
+  } 
+
+  function mousePressed(){
     if (mouseX <=30){
       if (mouseY <=30) brushColor = color(255, 0, 0);
       else if(mouseY <= 60) brushColor = color(255, 127, 0);
@@ -21,14 +28,9 @@ function draw() {
       else if(mouseY <= 240) brushColor = color(150, 80, 0);
       else if(mouseY <= 270) brushColor = color(255);
       else if(mouseY <= 300) brushColor = color(0);
-    
       
     } 
-    strokeWeight(5);
-    stroke(brushColor);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-    
-  } 
+  }
 
   function drawVColorPane(){
     noStroke();
@@ -63,4 +65,3 @@ function draw() {
     rect(0, 270, 30, 30);//Black
   }
 
-}
