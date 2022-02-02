@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(1440, 757);
   strokeWeight(5);
-  background(250);
+  background(255);
   brushColor = color(0);
 }
 
